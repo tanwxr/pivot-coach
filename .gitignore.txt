@@ -1,0 +1,15 @@
+# virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Streamlit
+.streamlit/
+
+# secrets
+secrets.toml
+
+# embeddings / large files (optional)
+*.pkl
