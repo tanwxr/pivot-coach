@@ -1,0 +1,99 @@
+course,provider,fee,skills
+Building Predictive Models from Scratch Using Python,SINGAPORE UNIVERSITY OF TECHNOLOGY AND DESIGN,3000.0,"* Create scatter plot and statistical plots like box plot, histogram, and bar plot_x000D_
+* Create a Pandaâ€™s DataFrame and selecting data from DataFrame_x000D_
+* Use library to read Comma-separated values (CSV) or EXCEL file_x000D_
+* Split data randomly into training set and testing set_x000D_
+* Normalize data using min-max normalization_x000D_
+* Give example of linear regression and classification_x000D_
+* Write objective function of linear regression_x000D_
+* Implement Gradient Descent algorithm for optimisation_x000D_
+* Train linear regression model using gradient descent_x000D_
+* Transform data for higher order features_x000D_
+* Evaluate linear regression model using R-squared and mean-squared-error_x000D_
+* Evaluate and choose learning rate_x000D_
+* Plot cost function over iteration time_x000D_
+* Plot linear regression_x000D_
+* Write objective function of logistic regression_x000D_
+* Use logistic regression to calculate probabilities of binary classification_x000D_
+* Train logistic regression model_x000D_
+* Split data into training, validation, and testing set_x000D_
+* Visualize non-linear decision boundary_x000D_
+* Classify multi-class problems using one-vs-all technique_x000D_
+* Calculate confusion matrix, precision, and recall"
+"The Art, Science and practice knowledge of Decision Making in Child Protection",NATIONAL UNIVERSITY OF SINGAPORE,1700.0,Participants will be introduced to the Partnering for Safety (PFS) and Structured Decision making (SDM) frameworks and tools that are used in the management of child protection cases in Singapore.
+PWM-Food Services: Customer Service Excellence (Level 1),ADEPT ACADEMY PTE. LTD.,350.0,This course aims to provide learners with the knowledge to be able to follow the organisation guidelines and provide a diverse range of customers with positive customer service experience.
+Emergency Response Management Course for Cleaners (Level 2),NTUC LEARNINGHUB PTE. LTD.,175.0,Participate in emergency response situations and suggest improvements to emergency response plans
+Low Carbon Design and Operations,SINGAPORE UNIVERSITY OF TECHNOLOGY AND DESIGN,5000.0,"This course provides sustainability professionals with the necessary knowledge and skills to implement a circular economy, manage supply chains sustainably, and design low-carbon operations. Participants will learn about effective carbon management strategies, energy performance and efficiency techniques, and how to create a sustainable and efficient supply chain. They will also develop the ability to assess the environmental impact of their operations and identify opportunities to reduce their carbon footprint."
+Sales Target Management,ADEPT ACADEMY PTE. LTD.,750.0,"This course aims to provide learners with the opportunity to be able to set, analyse and achieve sales target and guide their team members to improve sales performance in the store according to business objectives._x000D_
+To equip retail service staff with the essential skills and competencies to evaluate and monitor sales target and performance to plan and initiate actions to achieve excellence in sales delivery."
+Convolutional Neural Networks (CNNs) and Recurrent Neural Networks (RNNs),SINGAPORE MANAGEMENT UNIVERSITY,2200.0,"- Describe the fundamental concepts of Convolutional Neural Networks (CNNs), including convolutional layers, filters, and pooling layers, and their role in tasks like image classification and object detection._x000D_
+- Implement CNNs using PyTorch for tasks like image classification, leveraging common architectures like seminal convolutional neural network architecture (LeNet), Very Deep Convolutional Networks (VGG), and Residual Networks (ResNet). _x000D_
+- Describe the fundamentals of Recurrent Neural Networks (RNNs) and their applications in processing sequential data. _x000D_
+- Implement RNNs using PyTorch for tasks like sequence classification, employing architectures like Long short-term memory (LSTM)."
+Innovation by Design,SINGAPORE UNIVERSITY OF TECHNOLOGY AND DESIGN,7200.0,"This course is designed to give an introduction to the four Ds of the four-phase Design Innovation Cycle of Discover-Define-Develop-Deliver._x000D_
+_x000D_
+Participants will be introduced to the process of identifying and understanding design opportunities and user needs in close collaboration with all stakeholders._x000D_
+_x000D_
+Interpreting and reframing design opportunities and user needs with the objective of mapping those into activities, functions and abstract representations that foster design innovation._x000D_
+_x000D_
+Ideation and conceptualisation based on needs and opportunities._x000D_
+_x000D_
+Prototyping and model-making, to test ideas and concepts with relevant stakeholders."
+Security Screening Management (Conduct Security Screening of Person and Bag),NTUC LEARNINGHUB PTE. LTD.,485.0,"â€¢	Prepare security screening duty_x000D_
+â€¢	Prepare person for security screening_x000D_
+â€¢	Perform security screening of person with walk-through and hand-held metal detectors_x000D_
+â€¢	Conduct manual screening (pat down) of person_x000D_
+â€¢	Conduct manual bag search_x000D_
+â€¢	Conclude security screening activities"
+Kickstart Your E-commerce Retail Store,LITERACY EMPOWERMENT ACADEMY PTE. LTD.,1200.0,"This course is targeted at the retail industry and aims to equip learners with the new way of selling using E-Commerce on Shopify. Currently, retail companies must constantly innovate to make the transition to e-commerce. Marketers are implementing new e-commerce strategies. The COVID-19 situation has highlighted the importance of retail companies moving into the online realm._x000D_
+According to information from https://wearesocial.com/sg/digital-2020-singapore, 89% of Singapore internet users (regardless of device) have visited an online retail store. Such a high figure indicates that online retailing is in high demand._x000D_
+This course aims to train new learners about E-Commerce strategies by establishing an E-Commerce store using Shopify, understanding the user requirements and guidelines for establishing an E-Commerce store, determining online store marketing metrics, and developing a plan to improve technical and user experience."
+Essentials of International Relations and Political Development,NATIONAL UNIVERSITY OF SINGAPORE,1700.0,"The main objectives of this course:_x000D_
+1) Understand the broad history, key concepts and theories of international relations._x000D_
+2) Introduce the different theoretical approaches and develop a sophisticated understanding of various topics in world politics._x000D_
+3) Provide analytical tools to critically evaluate some of the contemporary policy debates._x000D_
+4) Develop a practical knowledge of several pressing issues in international relations and learn how to apply to their fields of work."
+Analysing and Interpreting Data (Synchronous and Asynchronous e-Learning),NANYANG TECHNOLOGICAL UNIVERSITY,2600.0,"Provide domain experience individuals with the tools to apply it in their work in the area of data analysis and forecasting._x000D_
+_x000D_
+With the use of probably the most pervasive application - MS Excel and PowerPoint - participants will learn not just how to build charts and plots in time-series analysis but to also conduct scenario forecasting and basic statistical analysis."
+WSQ EVS Level 1 Office Cleaning Program,TRAINING MASTERS WORKFORCE INSTITUTE PTE LTD,700.0,"A bundle program that includes Level 1:_x000D_
+Vertical Surface Maintenance_x000D_
+Furniture and Furnishing Maintenance_x000D_
+Horizontal Surface Maintenance _x000D_
+"
+Inter-professional Workshop on Cognitive Rehabilitation for Persons with Cognitive-Perceptual Dysfunction (Synchronous e-Learning),SINGAPORE INSTITUTE OF TECHNOLOGY,2000.0,"At the end of the workshop, participants will be able:_x000D_
+1.To understand the presentation of cognitive and perceptual problems across different diagnostic categories._x000D_
+2.To explain how functional cognition, perception and executive dysfunction have an impact on daily functioning._x000D_
+3.To carry out simple cognitive screening._x000D_
+4.To apply basic cognitive strategies as part of multi-disciplinary interventions."
+Workplace Safety and Health System Management (Maintain Workplace Safety and Health Policies and Procedures),AVANTA GLOBAL PTE. LTD.,260.0,"At the end of this course, a learner will be able to:_x000D_
+â€¢	Interpret salient WSH legal and other relevant requirements_x000D_
+â€¢	Implement WSH policies, procedures and programmes_x000D_
+â€¢	Implement workplace WSH management_x000D_
+â€¢	Conduct incident investigation"
+"Advanced Certificate in Sustainable Procurement Module 4: Leading Procurement in Environmental, Social,Â andÂ Governance (ESG) (Synchronous E-Learning)",SINGAPORE MANAGEMENT UNIVERSITY,2000.0,"At the end of the 2-day module, participants will be able to:_x000D_
+â€¢ Embody leadership qualities with a commitment to ethical conduct and social responsibility in procurement issues_x000D_
+â€¢ Understand Environmental, Social, and Governance (ESG) factors and their implications in sourcing and procurement decisions_x000D_
+â€¢ Drive positive change and accountability in sustainable procurement practices _x000D_
+â€¢ Learn the strategies and techniques in engaging stakeholders on issues relating to ethical procurement practices"
+Advanced Certificate in Digital Procurement Module 1: Procurement Data Analytics and Performance Measurement (Synchronous E-Learning),SINGAPORE MANAGEMENT UNIVERSITY,2000.0,"At the end of the 2-day module, participants will be able to:_x000D_
+â€¢ Understand data analytics in procurement and its impact on performance measurement_x000D_
+â€¢ Develop proficiency in using relevanat data tools and techniques for practical procurement decision making_x000D_
+â€¢ Gain insights into procurement key performance indicators and manage performance _x000D_
+â€¢ Apply advanced analytical methods to optimise procurement processes, reduce costs, and enhance overall organisational performance"
+Audio Post-production and Foley Arts,Republic Polytechnic,1698.0,"Audio Post-production and Foley Arts introduces students to conceptual, aesthetic and philosophical approaches to audio production for film, games, and other forms of visual media. The module covers practical industry skills including Foley for picture, location sound recording, and audio post production. Students are provided with opportunities to hone their audio production skills and develop a greater appreciation for the role that sound plays in visual media. Students are required to use industry equipment such as wired and wireless microphones, field-mixers, field-recorders, digital audio workstations, and other professional audio devices. Students will learn to apply these skills to produce and capture Foley, sound effects (SFX), soundtracks, ambient, sounds and dialogue for a wide range of media.  _x000D_
+ _x000D_
+Key topics in this module area: _x000D_
+Functions of sound for visual media _x000D_
+Location sound production _x000D_
+Audio post production and Foley for film"
+"Public Hygiene Maintenance â€“ Escalators, Travellators and Lift Surfaces (Level 1)",INSKILLS TRAINING PTE. LTD.,200.0,"1. Prepare for cleaning activities_x000D_
+2. Perform manual cleaning of escalator and travelator surfaces_x000D_
+3. Perform manual cleaning of lift surfaces_x000D_
+4. Reinstate work area"
+Business Brand Building on TikTok using Video Marketing,LITERACY EMPOWERMENT ACADEMY PTE. LTD.,1200.0,"This course is designed for any retail business and train learners on how to build a brand on TikTok. Every year, the demand for businesses to become more social grows. Despite having a social media presence, businesses are finding it increasingly difficult to stay visible and in the minds of their target audience. As a result, more businesses are turning to social media to increase brand awareness, resulting in increased traffic and conversion._x000D_
+_x000D_
+Such training is necessary because social media has become an essential component of every marketing strategy, with the benefits of using social media including increased traffic and sales at a low cost. In today's business, social media marketing is a low-cost resource. As a result, social media marketing has become an important component of marketing success, and many marketers see the platform as a potential source of business growth. Some of these professionals, however, are unsure of which strategies to employ in order to be effective._x000D_
+_x000D_
+We observed Singaporeans spent an average of 16.3 hours per month on TikTok with 74% increase year on year change (https://wearesocial.com/sg/blog/2022/02/digital-2022/). This shows that TikTok is an upcoming platform and very suitable for businesses to use to build their brand._x000D_
+"
