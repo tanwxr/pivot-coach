@@ -117,11 +117,15 @@ Missing skills:
 Provide:
 1. Difficulty of transition
 2. Recommended learning order
-3. Suggested projects
-4. Estimated timeline
 """
 
-if st.button("Explain my career transition"):
+st.info(
+    "🤖 Want a personalised explanation of your career move? "
+    "Ask the AI Career Coach below!"
+)
+
+
+if st.button("✨ Explain my career transition"):
 
     with st.spinner("Analyzing transition..."):
 
