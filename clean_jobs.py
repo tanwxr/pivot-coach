@@ -100,6 +100,19 @@ def fix_acronyms(title):
 
     return title
 
+from collections import Counter
+
+def top_skills(skill_lists, n=100):
+    all_skills = []
+
+    for skills in skill_lists:
+        all_skills.extend(skills)
+
+    return [
+        skill
+        for skill, count in Counter(all_skills).most_common(n)
+    ]
+
 df["title_norm"] = df["title"].apply(normalize_title)
 
 df["title_clean"] = (
@@ -110,11 +123,13 @@ df["title_clean"] = (
     .apply(fix_acronyms)
 )
 
+import ast
+
+df["skills"] = df["skills"].apply(ast.literal_eval)
+
 df.info()
 
 df.head()
-
-import ast
 
 def combine_skills(series):
     skills = set()
@@ -139,6 +154,18 @@ def combine_descriptions(series):
 
 df_roles = (
     df.groupby("title_clean")
+    .agg(
+        job_count=("title_clean", "count"),
+        companies=("company", lambda x: list(set(x))),
+        salary_min=("salary_min", "min"),
+        salary_max=("salary_max", "max"),
+        skills=("skills", lambda x: top_skills(x, 100))
+    )
+    .reset_index()
+)
+
+'''df_roles = (
+    df.groupby("title_clean")
       .agg(
           job_count=("title", "count"),
           salary_min=("salary_min", "min"),
@@ -148,7 +175,7 @@ df_roles = (
           job_text=("description", combine_descriptions)
       )
       .reset_index()
-)
+)'''
 
 df_roles = df_roles.rename(columns={
     "company": "companies",
@@ -161,4 +188,8 @@ df_roles.sort_values("job_count", ascending=False)[
     ["title_clean", "job_count", "company_count", "skill_count"]
 ].head(20)
 
+df_roles['skills']
+
 df_roles.to_csv("jobs_clean.csv", index=False)
+
+df_roles.info()
