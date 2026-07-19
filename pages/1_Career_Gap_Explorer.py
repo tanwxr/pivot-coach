@@ -24,7 +24,7 @@ roles = (
         "job_count",
         ascending=False
     )["title_clean"]
-    .tolist
+    .tolist()
 )
 
 
