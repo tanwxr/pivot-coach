@@ -25,7 +25,7 @@ IMPORTANT NOTICE: This web application is a prototype developed for educational 
 
 Furthermore, please be aware that the LLM may generate inaccurate or incorrect information. You assume full responsibility for how you use any generated output.
 
-Always consult with qualified professionals for accurate and personalised advice.)
+Always consult with qualified professionals for accurate and personalised advice.
 """)
 
 

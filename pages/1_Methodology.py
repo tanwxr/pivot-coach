@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 st.title("📚 Methodology")
 
@@ -142,6 +143,7 @@ st.markdown(
 
 """
 )
+
 
 
 def load_data(nrows, url):
