@@ -10,6 +10,7 @@ Original file is located at
 from openai import OpenAI
 import pandas as pd
 import pickle
+import ast
 
 from getpass import getpass
 from openai import OpenAI
@@ -20,9 +21,15 @@ client = OpenAI(api_key=api_key)
 
 jobs = pd.read_csv("jobs_clean.csv")
 
-jobs["skills_embedding"] = jobs["skills"].apply(
-    lambda x: x[:50]
-)
+def safe_literal_eval(x):
+    try:
+        return ast.literal_eval(x)
+    except:
+        return []
+
+jobs["skills"] = jobs["skills"].apply(safe_literal_eval)
+
+jobs["companies"] = jobs["companies"].apply(ast.literal_eval)
 
 documents = []
 
@@ -32,7 +39,7 @@ for _, row in jobs.iterrows():
     Role: {row['title_clean']}
 
     Skills:
-    {', '.join(row['skills_embedding'])}
+    {', '.join(row['skills'])}
 
     Salary:
     ${row['salary_min']} - ${row['salary_max']}
@@ -43,6 +50,8 @@ for _, row in jobs.iterrows():
     """
 
     documents.append(doc)
+
+print(documents[0])
 
 for i, doc in enumerate(documents):
     if len(doc.split()) > 5000:
