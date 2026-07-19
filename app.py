@@ -14,11 +14,6 @@ st.set_page_config(
     page_icon="🚀"
 )
 
-st.title("PivotCoach")
-st.write("Your Career Transition Navigator")
-
-
-
 headers = {
     "Authorization": f"Bearer {API_KEY}"
 }
@@ -93,8 +88,17 @@ Turn job market data into actionable career guidance —
 helping professionals understand **where they are, where they want to go,
 and how to get there.**
 
+
+ ### 🔗 Project Repository
+
+View the source code and documentation here:
+
+[GitHub Repository](https://github.com/tanwxr/pivot-coach)
+    
+
 """
 )
+
 
 def load_data(nrows, url):
     data = pd.read_csv(url, nrows=nrows)
