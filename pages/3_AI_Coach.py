@@ -80,7 +80,7 @@ The AI Coach will:
 
 user_input = st.text_area(
     "Your career situation",
-    placeholder="Example: I am a Data Analyst with SQL experience and want to move into Data Engineering"
+    placeholder="Example: I am a Data Analyst with SQL experience and want to move into management roles"
 )
 
 

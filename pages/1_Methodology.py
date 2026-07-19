@@ -47,29 +47,10 @@ Output:
 """
 )
 
-st.markdown(
-"""
-```mermaid
-flowchart TD
-
-A[User selects current and target role]
---> B[Retrieve role profiles]
-
-B --> C[Compare skills]
-
-C --> D[Identify existing skills]
-C --> E[Identify missing skills]
-
-B --> F[Retrieve salary range]
-
-D --> G[Generate career summary]
-E --> G
-
-G --> H[GPT explanation]
-H --> I[Display career advice]
-
-""",
-unsafe_allow_html=True
+st.image(
+    "assets/career_advice_flowchart.png",
+    caption="Career Gap Explorer workflow",
+    use_container_width=True
 )
 
 
@@ -108,31 +89,10 @@ Instead of asking an LLM to answer from memory:
 5. GPT generates grounded career advice.
 """
 )
-
-st.markdown(
-"""
-```mermaid
-flowchart TD
-
-A[User describes experience and goals]
-
-A --> B[Create embedding using OpenAI Embeddings]
-
-B --> C[Semantic similarity search]
-
-C --> D[Retrieve matching job roles]
-
-C --> E[Retrieve relevant courses]
-
-D --> F[Combine retrieved context]
-E --> F
-
-F --> G[GPT Career Coach]
-
-G --> H[Personalised recommendations]
-
-""",
-unsafe_allow_html=True
+st.image(
+    "assets/career_coach_rag_flowchart.png",
+    caption="AI coach workflow",
+    use_container_width=True
 )
 
 st.header("⚙️ Technical Architecture")
@@ -166,3 +126,51 @@ During user interaction:
 - Retrieved documents are sent to GPT
 """
 )
+
+st.image(
+    "assets/rag_pipeline_five_stages.png",
+    caption="RAG Pipeline",
+    use_container_width=True
+)
+
+
+st.markdown(
+"""
+---
+
+### Preview raw data below:
+
+"""
+)
+
+
+def load_data(nrows, url):
+    data = pd.read_csv(url, nrows=nrows)
+    lowercase = lambda x: str(x).lower()
+    data.rename(lowercase, axis='columns', inplace=True)
+    return data
+
+
+# Create a text element and let the reader know the data is loading.
+data_load_state = st.text('Loading jobs data...')
+# Load 10,000 rows of data into the dataframe.
+data = load_data(10000, './data/jobs.csv')
+# Notify the reader that the data was successfully loaded.
+data_load_state.text("Jobs Data Loaded! ")
+
+if st.checkbox('Show raw data for jobs'):
+    st.subheader('Raw data extracted from MyCareersFuture')
+    st.write(data)
+
+
+
+# Create a text element and let the reader know the data is loading.
+data_load_state = st.text('Loading course data...')
+# Load 10,000 rows of data into the dataframe.
+data = load_data(10000, './data/courses.csv')
+# Notify the reader that the data was successfully loaded.
+data_load_state.text("Course Data Loaded! ")
+
+if st.checkbox('Show raw data for courses'):
+    st.subheader('Raw data extracted from SkillsFuture')
+    st.write(data)

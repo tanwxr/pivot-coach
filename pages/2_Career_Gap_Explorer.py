@@ -19,7 +19,7 @@ st.title("Career Gap Explorer")
 roles = jobs["title_clean"].tolist()
 
 roles = (
-    jobs[jobs["job_count"] >= 2]
+    jobs[jobs["job_count"] >= 1]
     .sort_values(
         "job_count",
         ascending=False
