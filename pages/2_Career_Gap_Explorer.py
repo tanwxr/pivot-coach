@@ -119,6 +119,7 @@ Provide:
 2. Recommended learning order
 """
 
+st.markdown ("---")
 st.info(
     "🤖 Want a personalised explanation of your career move? "
     "Ask the AI Career Coach below!"
