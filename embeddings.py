@@ -68,3 +68,69 @@ with open("role_embeddings.pkl", "wb") as f:
         },
         f
     )
+
+courses = pd.read_csv("courses.csv")
+
+courses.head(5)
+
+def clean_skills(x):
+    if pd.isna(x):
+        return []
+
+    # remove weird encoding
+    x = x.replace("_x000D_", "")
+    x = x.replace("â€™", "'")
+
+    # split bullets
+    skills = [
+        s.strip("* ").strip()
+        for s in x.split("\n")
+        if s.strip()
+    ]
+
+    return skills
+
+
+courses["skills"] = courses["skills"].apply(clean_skills)
+
+documents = []
+
+for _, row in courses.iterrows():
+
+    doc = f"""
+    Course: {row['course']}
+
+    Skills:
+    {', '.join(row['skills'])}
+
+    Provider:
+    {row['provider']}
+
+    Fee:
+    ${row['fee']}
+    """
+
+    documents.append(doc)
+
+print(documents[0])
+
+response = client.embeddings.create(
+    model="text-embedding-3-small",
+    input=documents
+)
+
+vectors = [
+    item.embedding
+    for item in response.data
+]
+
+
+with open("course_embeddings.pkl", "wb") as f:
+    pickle.dump(
+        {
+            "documents": documents,
+            "vectors": vectors,
+            "course": courses["course"].tolist()
+        },
+        f
+    )
