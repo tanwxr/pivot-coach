@@ -1,91 +1,90 @@
 import streamlit as st
 import pandas as pd
-from rapidfuzz import process, fuzz
+import ast
 
 # -----------------------
 # LOAD DATA
 # -----------------------
-jobs = pd.read_csv("data/jobs.csv")
+jobs = pd.read_csv("data/jobs_clean.csv")
 
-# -----------------------
-# CANONICAL ROLES
-# -----------------------
-canonical_roles = [
-    "data engineer",
-    "data analyst",
-    "cybersecurity analyst",
-    "product manager",
-    "accountant"
-]
+jobs["skills"] = jobs["skills"].apply(ast.literal_eval)
 
-def standardise_role(role):
-    role = role.lower().strip()
 
-    match = process.extractOne(
-        role,
-        canonical_roles,
-        scorer=fuzz.token_sort_ratio
-    )
-
-    if match[1] >= 80:
-        return match[0]
-
-    return role
-
-# -----------------------
-# CLEAN ROLE
-# -----------------------
-jobs["role_clean"] = jobs["title"].apply(standardise_role)
-
-# -----------------------
-# REMOVE DUPLICATES
-# -----------------------
-jobs = jobs.drop_duplicates(subset=["role_clean", "skills"])
-
-# -----------------------
-# CLEAN SKILLS
-# -----------------------
-jobs["skills"] = (
-    jobs["skills"]
-    .str.lower()
-    .str.split(",")
-)
-
-jobs["skills"] = jobs["skills"].apply(
-    lambda x: [s.strip() for s in x if s and s.strip()]
-)
-
-# -----------------------
-# MERGE SKILLS PER ROLE
-# -----------------------
-def merge_skills(series):
-    all_skills = []
-    for skills in series:
-        all_skills.extend(skills)
-    return sorted(set(all_skills))
-
-df_merged = (
-    jobs.groupby("role_clean")["skills"]
-    .apply(merge_skills)
-    .reset_index()
-)
 
 # -----------------------
 # STREAMLIT UI
 # -----------------------
 st.title("Career Gap Explorer")
 
-roles = df_merged["role_clean"].tolist()
+roles = jobs["title_clean"].tolist()
+
+roles = (
+    jobs[jobs["job_count"] >= 2]
+    .sort_values(
+        "job_count",
+        ascending=False
+    )["title_clean"]
+    .tolist()
+)
+
 
 current_role = st.selectbox("Current Role", roles)
 target_role = st.selectbox("Target Role", roles)
+
+
+# -----------------------
+# SALARY COMPARISON
+# -----------------------
+
+st.subheader("Salary Comparison")
+current_salary = st.number_input(
+    "Your current monthly salary",
+    min_value=0,
+    value=5000,
+    step=200
+)
+
+target_row = jobs[jobs["title_clean"] == target_role].iloc[0]
+
+target_min = target_row["salary_min"]
+target_max = target_row["salary_max"]
+
+st.metric(
+    label=f"Typical salary range: {target_role}",
+    value=f"${target_min:,.0f} - ${target_max:,.0f}"
+)
+
+salary_progress = min(
+    current_salary / target_max,
+    1.0
+)
+
+salary_pct = (
+    (current_salary - target_min)
+    / (target_max - target_min)
+)
+
+salary_pct = max(0, min(salary_pct, 1))
+
+st.progress(salary_pct)
+
+if current_salary < target_min:
+    st.warning("Below the typical salary range")
+
+elif current_salary > target_max:
+    st.success("Above the typical salary range")
+
+else:
+    st.info("Within the typical salary range")
+
+
 
 # -----------------------
 # SKILL LOOKUP
 # -----------------------
 def get_skills(role):
     return set(
-        df_merged[df_merged["role_clean"] == role]["skills"].values[0]
+        jobs[jobs["title_clean"] == role]["skills"].values[0]
     )
 
 current_skills = get_skills(current_role)
@@ -93,6 +92,51 @@ target_skills = get_skills(target_role)
 
 missing_skills = target_skills - current_skills
 common_skills = target_skills & current_skills
+
+
+# -----------------------
+# LLM Explainer
+# -----------------------
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=st.secrets["OPENAI_API_KEY"]
+)
+
+prompt = f"""
+Current role: {current_role}
+
+Target role: {target_role}
+
+Skills already possessed:
+{', '.join(common_skills)}
+
+Missing skills:
+{', '.join(missing_skills)}
+
+Provide:
+1. Difficulty of transition
+2. Recommended learning order
+3. Suggested projects
+4. Estimated timeline
+"""
+
+if st.button("Explain my career transition"):
+
+    with st.spinner("Analyzing transition..."):
+
+        response = client.chat.completions.create(
+            model="gpt-5-mini",
+            messages=[
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ]
+        )
+
+        st.markdown(response.choices[0].message.content)
+
 
 # Make Skill Cards
 st.subheader("Skills you already have")

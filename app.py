@@ -2,8 +2,20 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+API_KEY = os.getenv("MY_API_KEY") or st.secrets["MY_API_KEY"]
+
+
 st.title("PivotCoach")
 st.write("Your Career Transition Navigator")
+
+headers = {
+    "Authorization": f"Bearer {API_KEY}"
+}
 
 
 def load_data(nrows, url):

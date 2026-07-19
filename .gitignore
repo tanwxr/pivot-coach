@@ -11,5 +11,9 @@ __pycache__/
 # secrets
 secrets.toml
 
+.env
+.streamlit/
+__pycache__/
+
 # embeddings / large files (optional)
 *.pkl
