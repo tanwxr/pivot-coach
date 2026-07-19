@@ -75,7 +75,7 @@ elif current_salary > target_max:
     st.success("Above the typical salary range")
 
 else:
-    st.info("Within the typical salary range")
+    st.success("Within the typical salary range")
 
 
 

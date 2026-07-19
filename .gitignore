@@ -16,4 +16,4 @@ secrets.toml
 __pycache__/
 
 # embeddings / large files (optional)
-*.pkl
+#*.pkl
