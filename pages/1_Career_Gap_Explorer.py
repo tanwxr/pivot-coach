@@ -100,7 +100,7 @@ common_skills = target_skills & current_skills
 from openai import OpenAI
 
 client = OpenAI(
-    api_key=st.secrets["OPENAI_API_KEY"]
+    api_key=st.secrets["MY_API_KEY "]
 )
 
 prompt = f"""
